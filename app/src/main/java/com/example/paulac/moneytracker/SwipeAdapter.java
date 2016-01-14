@@ -35,7 +35,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         return fragment;
     }*/
 
-    public static int count=2;
+    public static int count=5;
 
     @Override
     public int getCount() {
@@ -46,7 +46,6 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-
                 return "Expenses";
             case 1:
                 return "Income";
