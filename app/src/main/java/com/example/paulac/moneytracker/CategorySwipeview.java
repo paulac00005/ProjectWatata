@@ -8,22 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class swipeview extends Fragment {
+public class CategorySwipeview extends Fragment {
 
     public static Object expenses;
     private String title;
     private int page;
 
-
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.activity_swipeview, container, false);
-
-        return rootView;
-
-    }*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,8 +22,8 @@ public class swipeview extends Fragment {
         title = getArguments().getString("someTitle");
     }
 
-    public static swipeview newInstance(int page, String title) {
-        swipeview fragmentFirst = new swipeview();
+    public static CategorySwipeview newInstance(int page, String title) {
+        CategorySwipeview fragmentFirst = new CategorySwipeview();
         Bundle args = new Bundle();
         args.putInt("someInt", page);
         args.putString("someTitle", title);

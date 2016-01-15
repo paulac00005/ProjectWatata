@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".swipeview" >
         </activity>
+        <activity android:name=".HomeSwipview" >
+        </activity>
     </application>
 
 </manifest>

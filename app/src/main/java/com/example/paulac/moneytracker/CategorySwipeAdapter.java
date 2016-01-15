@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 /**
  * Created by paulac on 1/13/16.
  */
-public class SwipeAdapter extends FragmentStatePagerAdapter {
+public class CategorySwipeAdapter extends FragmentStatePagerAdapter {
 
-    public SwipeAdapter(FragmentManager fm) {
+    public CategorySwipeAdapter(FragmentManager fm) {
         super(fm);
     }
 
@@ -18,9 +18,9 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return swipeview.newInstance(0, "Page # 1");
+                return CategorySwipeview.newInstance(0, "Page # 1");
             case 1:
-                return swipeview.newInstance(1, "Page # 2");
+                return CategorySwipeview.newInstance(1, "Page # 2");
             default:
                 return null;
         }
@@ -35,7 +35,7 @@ public class SwipeAdapter extends FragmentStatePagerAdapter {
         return fragment;
     }*/
 
-    public static int count=5;
+    public static int count=2;
 
     @Override
     public int getCount() {
