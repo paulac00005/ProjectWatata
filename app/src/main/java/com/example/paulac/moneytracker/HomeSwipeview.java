@@ -9,9 +9,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class HomeSwipeview extends ListFragment {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class HomeSwipeview extends Fragment {
+
+    String[] values = new String[] { "Android List View",
+            "Adapter implementation",
+            "Simple List View In Android",
+            "Create List View Android",
+            "Android Example",
+            "List View Source Code",
+            "List View Array Adapter",
+            "Android Example List View"};
+
+
+    int[] flags = new int[]{
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money,
+            R.drawable.money};
 
     private String title;
     private int page;
@@ -41,28 +68,30 @@ public class HomeSwipeview extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+
+        for(int i=0;i<10;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", "App Name : " + values[i]);
+            hm.put("cur","creator : " + values[i]);
+            hm.put("flag", Integer.toString(flags[i]) );
+            aList.add(hm);
+        }
+        String[] from = { "flag","txt","cur" };
+
+        int[] to = { R.id.textView7,R.id.textView7,R.id.textView7,R.id.textView2};
+
+
+
         View view = inflater.inflate(R.layout.activity_home_swipview, container, false);
-        TextView tvLabel = (TextView) view.findViewById(R.id.HomeSwipetextView);
-
-
-        // Defined Array values to show in ListView
-        String[] values = new String[] { "Android List View",
-                "Adapter implementation",
-                "Simple List View In Android",
-                "Create List View Android",
-                "Android Example",
-                "List View Source Code",
-                "List View Array Adapter",
-                "Android Example List View"};
-
-        ListView listView = (ListView) view.findViewById(R.id.listView);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.categorylist , values);
-        listView.setAdapter(adapter);
-
-
-
-tvLabel.setText(page + " -- " + title);
+        TextView tvLabel = (TextView)view.findViewById(R.id.HomeSwipetextView);
+        tvLabel.setText("page " + page);
+        tvLabel.setText(page + " -- " + title);
+        ListView list = (ListView)view.findViewById(R.id.listView);
+        SimpleAdapter adapter = new SimpleAdapter(getActivity().getBaseContext(), aList, R.layout.categorylist, from, to);
+        list.setAdapter(adapter);
         return view;
+
     }
 }
