@@ -43,7 +43,7 @@ public class HomeSwipeview extends ListFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_home_swipview, container, false);
         TextView tvLabel = (TextView) view.findViewById(R.id.HomeSwipetextView);
-        ListView listView = (ListView) view.findViewById(R.id.listView);
+
 
         // Defined Array values to show in ListView
         String[] values = new String[] { "Android List View",
@@ -55,9 +55,11 @@ public class HomeSwipeview extends ListFragment {
                 "List View Array Adapter",
                 "Android Example List View"};
 
-        this.setListAdapter(new ArrayAdapter<String>(
-                this, R.layout.listviewlayout,
-                R.id.Itemname, itemname));
+        ListView listView = (ListView) view.findViewById(R.id.listView);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), R.layout.categorylist , values);
+        listView.setAdapter(adapter);
+
 
 
 tvLabel.setText(page + " -- " + title);
