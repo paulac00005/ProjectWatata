@@ -20,16 +20,7 @@ public class HomeSwipeview extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
-        title = getArguments().getString("someTitle");
-        Button at = (Button)getActivity().findViewById(R.id.Add);
-        at.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(),Add_Transaction.class);
-                startActivity(i);
-            }
-        });
-    }
+        title = getArguments().getString("someTitle");}
 
     public static HomeSwipeview newInstance(int page, String title) {
         HomeSwipeview fragmentFirst = new HomeSwipeview();
