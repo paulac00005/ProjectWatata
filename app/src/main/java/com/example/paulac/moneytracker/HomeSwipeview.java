@@ -16,11 +16,15 @@ public class HomeSwipeview extends Fragment {
     private int page;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
-        title = getArguments().getString("someTitle");}
+        title = getArguments().getString("someTitle");
+    }
+
+
 
     public static HomeSwipeview newInstance(int page, String title) {
         HomeSwipeview fragmentFirst = new HomeSwipeview();
