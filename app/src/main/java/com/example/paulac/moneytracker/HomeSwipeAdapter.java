@@ -195,9 +195,8 @@ public class HomeSwipeAdapter extends FragmentStatePagerAdapter {
             case 35:
                 return months[11] + " " + years[2];
             default:
-                return null;
+               return null;
         }
     }
-
 }
 
