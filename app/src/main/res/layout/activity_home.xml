@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Add"
-        android:onClick="onKlik"
+        android:onClick="onClick"
         android:text="Add Transaction"/>
 
 </RelativeLayout>

@@ -12,6 +12,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
+import android.provider.ContactsContract;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,10 +30,9 @@ import com.example.paulac.moneytracker.Database.UserDbHelper;
 
 import java.util.Calendar;
 
-public class Add_Transaction extends AppCompatActivity implements View.OnClickListener, LocationListener {
+public class Add_Transaction extends ActionBarActivity implements View.OnClickListener, LocationListener {
 
     private LocationManager lManager;
-    private Location location;
 
     Context con = this;
     UserDbHelper userDbHelper;
@@ -42,12 +43,11 @@ public class Add_Transaction extends AppCompatActivity implements View.OnClickLi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_add__transaction);
 
         lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
         category = (EditText) findViewById(R.id.categorytext);
         amount = (EditText) findViewById(R.id.amounttext);
         note = (EditText) findViewById(R.id.notetext);
@@ -82,6 +82,7 @@ public class Add_Transaction extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
 
     public void onClick(View v) {
         Intent i = new Intent(this, Categories.class);
