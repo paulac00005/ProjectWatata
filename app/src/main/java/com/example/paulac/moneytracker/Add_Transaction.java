@@ -30,7 +30,7 @@ import com.example.paulac.moneytracker.Database.UserDbHelper;
 
 import java.util.Calendar;
 
-public class Add_Transaction extends ActionBarActivity implements View.OnClickListener, LocationListener {
+public class Add_Transaction extends ActionBarActivity implements View.OnClickListener {
 
     private LocationManager lManager;
 
@@ -47,7 +47,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__transaction);
 
-        lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         category = (EditText) findViewById(R.id.categorytext);
         amount = (EditText) findViewById(R.id.amounttext);
         note = (EditText) findViewById(R.id.notetext);
@@ -60,6 +59,13 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (category.getText().toString() == "") {
+                    Toast.makeText(getBaseContext(), "Please provide category for this transaction", Toast.LENGTH_LONG).show();
+                }else if(amount.getText().toString()==""){
+                    Toast.makeText(getBaseContext(), "Please provide the amount for this transaction", Toast.LENGTH_LONG).show();
+                }else if(category.getText().toString()=="" && amount.getText().toString()==""){
+                    Toast.makeText(getBaseContext(), "Please provide category and amount for this transaction", Toast.LENGTH_SHORT).show();
+                }else{
                 String Category = category.getText().toString();
                 String Amount = amount.getText().toString();
                 String Note = note.getText().toString();
@@ -71,15 +77,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
                 userDbHelper.addTransaction(Category, Amount, Note, Date, Event, Location, sqLiteDatabase);
                 Toast.makeText(getBaseContext(), "Data Saved", Toast.LENGTH_LONG).show();
                 userDbHelper.close();
-
-
-                location.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-            }
+            }}
         });
     }
 
@@ -113,46 +111,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
 
     public void Date(View view) {
         this.DatePick();
-    }
-
-
-    @Override
-    public void onLocationChanged(Location location) {
-
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        Log.i("Tuto géolocalisation", "Le statut de la source a changé.");
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-        Log.i("Tuto géolocalisation", "La source a été activé.");
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    @Override
-    public void onProviderDisabled(String provider) {
-        Log.i("Tuto géolocalisation", "La source a été désactivé");
-
-        Toast.makeText(this,
-                String.format("La source \"%s\" a été désactivé", provider),
-                Toast.LENGTH_SHORT).show();
-
-
-        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                Add_Transaction.this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
-            }
-
-            return;
-        }
-        lManager.removeUpdates(this);
-
-        setProgressBarIndeterminateVisibility(false);
     }
 
 }
