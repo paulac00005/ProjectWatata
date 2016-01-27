@@ -19,6 +19,7 @@ public class CategorySwipeview extends ListFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
         title = getArguments().getString("someTitle");
@@ -46,10 +47,10 @@ public class CategorySwipeview extends ListFragment {
         ViewGroup view = (ViewGroup)inflater.inflate(R.layout.activity_swipeview, container, false);
 
         String[] datasource = {"nfksdnf","fdsaf","faef","fea","ferfgre","gresg","gsgregaeg"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.categorylist, R.id.textView7, datasource);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.categorylist, R.id.list, datasource);
         setListAdapter(adapter);
         setRetainInstance(true);
-        ListView lv = (ListView)view.findViewById(R.id.listView);
+        //ListView lv = (ListView)view.findViewById(R.id.listView);
         TextView tvLabel = (TextView) view.findViewById(R.id.SwipetextView);
         tvLabel.setText(page + " -- " + title);
         return view;
