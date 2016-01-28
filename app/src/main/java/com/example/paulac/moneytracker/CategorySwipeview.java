@@ -63,10 +63,10 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
-                .show();
+        //Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
+                //.show();
         TextView lala = (TextView)view.findViewById(R.id.lala);
-        String s = (String)parent.getItemAtPosition(position);
+        String s = (String) parent.getItemAtPosition(position);
         lala.setText(s);
     }
 }
