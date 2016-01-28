@@ -6,20 +6,22 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class CategorySwipeview extends ListFragment {
+import java.util.List;
 
-    public static Object expenses;
+public class CategorySwipeview extends ListFragment implements AdapterView.OnItemClickListener {
+
     private String title;
     private int page;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 0);
         title = getArguments().getString("someTitle");
@@ -45,14 +47,26 @@ public class CategorySwipeview extends ListFragment {
 
 
         ViewGroup view = (ViewGroup)inflater.inflate(R.layout.activity_swipeview, container, false);
-
-        String[] datasource = {"nfksdnf","fdsaf","faef","fea","ferfgre","gresg","gsgregaeg"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.categorylist, R.id.list, datasource);
-        setListAdapter(adapter);
-        setRetainInstance(true);
-        //ListView lv = (ListView)view.findViewById(R.id.listView);
-        TextView tvLabel = (TextView) view.findViewById(R.id.SwipetextView);
-        tvLabel.setText(page + " -- " + title);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Categories, android.R.layout.simple_list_item_1);
+
+        setListAdapter(adapter);
+        getListView().setOnItemClickListener(this);
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
+                .show();
+        TextView lala = (TextView)view.findViewById(R.id.lala);
+        String s = (String)parent.getItemAtPosition(position);
+        lala.setText(s);
     }
 }

@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">MoneyTracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="imgdesc">imgdesc</string>
+
+    <string-array name="Categories">
+        <item>Food and Beverage</item>
+        <item>Bills and Utilities</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Friends and Lovers</item>
+        <item>Entertainment</item>
+        <item>Travel</item>
+        <item>Health and Fitness</item>
+        <item>Gifts and Donations</item>
+        <item>Family</item>
+        <item>Education</item>
+        <item>Investment</item>
+        <item>Insurances</item>
+        <item>Fees and Charges</item>
+        <item>Other Expense</item>
+    </string-array>
+
 </resources>
