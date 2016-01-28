@@ -1,5 +1,6 @@
 package com.example.paulac.moneytracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -53,9 +54,7 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Categories, android.R.layout.simple_list_item_1);
-
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
 
@@ -63,10 +62,14 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
-                //.show();
-        TextView lala = (TextView)view.findViewById(R.id.lala);
-        String s = (String) parent.getItemAtPosition(position);
-        lala.setText(s);
+        if(position==0){
+            Intent intent = new Intent(view.getContext(), Add_Transaction.class);
+            intent.putExtra("one","Food and Beverage");
+            view.getContext().startActivity(intent);
+        }
+
+        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
+                .show();
+
     }
 }
