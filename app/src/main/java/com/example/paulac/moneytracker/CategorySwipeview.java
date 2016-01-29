@@ -17,6 +17,12 @@ import java.util.List;
 
 public class CategorySwipeview extends ListFragment implements AdapterView.OnItemClickListener {
 
+    CategorySwipeAdapter categorySwipeAdapter;
+
+    public void setCategorySwipeAdapter(CategorySwipeAdapter categorySwipeAdapter) {
+        this.categorySwipeAdapter = categorySwipeAdapter;
+    }
+
     private String title;
     private int page;
     String[] a = {"Food and Beverage"};
@@ -55,11 +61,12 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Expenses, android.R.layout.simple_list_item_1);
-        setListAdapter(adapter);
-        getListView().setOnItemClickListener(this);
 
-    }
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(), R.array.Expenses, android.R.layout.simple_list_item_1);
+            setListAdapter(adapter1);
+            getListView().setOnItemClickListener(this);
+
+        }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

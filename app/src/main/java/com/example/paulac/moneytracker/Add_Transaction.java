@@ -45,8 +45,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
             category.setText(getName);
         }
 
-
-
         amount = (EditText) findViewById(R.id.amounttext);
         note = (EditText) findViewById(R.id.notetext);
         date = (EditText) findViewById(R.id.datetext);
