@@ -41,7 +41,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         Bundle bd = i.getExtras();
         if(bd != null)
         {
-            String getName = (String) bd.get("one");
+            String getName = (String) bd.get("text");
             category.setText(getName);
         }
 

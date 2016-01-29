@@ -63,10 +63,70 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent i = new Intent(getActivity(),Add_Transaction.class);
-        i.putExtra("one", "Food and Beverage");
-        this.startActivity(i);
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
-                .show();
+        if(position == 0){
+            Intent i = new Intent(getActivity(),Add_Transaction.class);
+            i.putExtra("text", "Food & Beverage");
+            this.startActivity(i);
+        }else if(position == 1){
+            Intent i = new Intent(getActivity(),Add_Transaction.class);
+            i.putExtra("text", "Bills & Utilities");
+            this.startActivity(i);
+        }else if(position == 2) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Transportation");
+            this.startActivity(i);
+        }else if(position == 3) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Shopping");
+            this.startActivity(i);
+        }else if(position == 4) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Friends & Lover");
+            this.startActivity(i);
+        }else if(position == 5) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Entertainment");
+            this.startActivity(i);
+        }else if(position == 6) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Travel");
+            this.startActivity(i);
+        }else if(position == 7) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Health & Fitness");
+            this.startActivity(i);
+        }else if(position == 8) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Gifts & Donations");
+            this.startActivity(i);
+        }else if(position == 9) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Family");
+            this.startActivity(i);
+        }else if(position == 10) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Education");
+            this.startActivity(i);
+        }else if(position == 11) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Investment");
+            this.startActivity(i);
+        }else if(position == 12) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Insurances");
+            this.startActivity(i);
+        }else if(position == 13) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Fees & Charges");
+            this.startActivity(i);
+        }else if(position == 14) {
+            Intent i = new Intent(getActivity(), Add_Transaction.class);
+            i.putExtra("text", "Other Expense");
+            this.startActivity(i);
+        }
+
+
+        /*Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
+                .show();*/
     }
 }
