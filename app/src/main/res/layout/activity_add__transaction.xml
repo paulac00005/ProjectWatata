@@ -16,168 +16,200 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center_horizontal">
 
             <Button
                 android:layout_width="48dp"
                 android:layout_height="50dp"
                 android:id="@+id/button"
                 android:onClick="onClick"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/category" />
+                android:background="@drawable/category"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/categorytext"
+                android:background="@android:color/white"
                 android:hint="Select Category"
-                android:paddingTop="25dp"
+                android:onClick="onClick"
                 android:singleLine="true"
                 style="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_weight="0.55"
-                android:editable="false" />
+                android:editable="false"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:paddingLeft="10dp"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="50dp"
                 android:id="@+id/imageView"
-                android:background="@drawable/amount" />
+                android:background="@drawable/amount"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
+                android:background="@android:color/white"
                 android:layout_height="wrap_content"
                 android:id="@+id/amounttext"
-                android:hint="Amount (Numbers Only)"
-                android:paddingLeft="10dp"
-                android:paddingTop="25dp"
+                android:hint="Amount"
                 android:layout_weight="0.55"
                 style="@style/Base.TextAppearance.AppCompat.Small"
-                android:numeric="decimal" />
+                android:numeric="decimal"
+                android:textSize="20dp"
+                android:singleLine="true"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="50dp"
                 android:id="@+id/imageView2"
-                android:background="@drawable/note" />
+                android:background="@drawable/note"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
+                android:background="@android:color/white"
                 android:id="@+id/notetext"
                 android:hint="Note"
                 android:paddingLeft="10dp"
-                android:paddingTop="25dp"
                 android:layout_weight="0.55"
-                style="@style/Base.TextAppearance.AppCompat.Small" />
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <Button
                 android:layout_width="48dp"
                 android:layout_height="50dp"
                 android:onClick="Date"
                 android:id="@+id/imageView3"
-                android:background="@drawable/date" />
+                android:background="@drawable/date"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
+                android:background="@android:color/white"
                 android:id="@+id/datetext"
                 android:hint="Date"
-                android:paddingTop="25dp"
                 android:editable="false"
                 android:onClick="Date"
                 android:singleLine="true"
                 style="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_weight="0.55" />
+                android:layout_weight="0.55"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:paddingLeft="10dp"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center">
 
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="50dp"
+                android:onClick="Date"
                 android:id="@+id/imageView4"
-                android:background="@drawable/event" />
+                android:background="@drawable/event"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
+                android:background="@android:color/white"
                 android:id="@+id/eventtext"
                 android:hint="Event"
-                android:paddingLeft="10dp"
-                android:paddingTop="25dp"
+                android:singleLine="true"
+                style="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_weight="0.55"
-                style="@style/Base.TextAppearance.AppCompat.Small" />
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:layout_width="48dp"
                 android:layout_height="50dp"
                 android:id="@+id/imageView5"
                 android:background="@drawable/location2"
-                android:contentDescription="1" />
+                android:contentDescription="1"
+                android:layout_gravity="center" />
 
             <EditText
                 android:layout_width="227dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/locationtext"
                 android:hint="Location"
+                android:background="@android:color/white"
                 android:paddingLeft="10dp"
-                android:paddingTop="25dp"
                 android:layout_weight="0.55"
-                style="@style/Base.TextAppearance.AppCompat.Small" />
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:paddingTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:gravity="center_horizontal">
 
             <ImageView
                 android:layout_width="48dp"
@@ -206,8 +238,8 @@
             android:layout_height="wrap_content"
             android:text="Add"
             android:id="@+id/save"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="3dp" />
+            android:layout_gravity="bottom|center_vertical"
+            android:layout_marginTop="15dp" />
 
 
     </LinearLayout>

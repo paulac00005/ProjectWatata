@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -44,6 +45,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
             String getName = (String) bd.get("text");
             category.setText(getName);
         }
+
 
         amount = (EditText) findViewById(R.id.amounttext);
         note = (EditText) findViewById(R.id.notetext);
