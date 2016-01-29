@@ -36,15 +36,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         supportRequestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__transaction);
-        Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "fonts/customfont.ttf");
-
-        holder.category.setTypeface(myTypeface);
-        amount.setTypeface(myTypeface);
-        note.setTypeface(myTypeface);
-        date.setTypeface(myTypeface);
-        event.setTypeface(myTypeface);
-        locationText.setTypeface(myTypeface);
-
 
         category = (EditText) findViewById(R.id.categorytext);
         Intent i = getIntent();
