@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -35,6 +36,14 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         supportRequestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__transaction);
+        Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "fonts/customfont.ttf");
+
+        holder.category.setTypeface(myTypeface);
+        amount.setTypeface(myTypeface);
+        note.setTypeface(myTypeface);
+        date.setTypeface(myTypeface);
+        event.setTypeface(myTypeface);
+        locationText.setTypeface(myTypeface);
 
 
         category = (EditText) findViewById(R.id.categorytext);
@@ -80,6 +89,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
             }}
         });
     }
+
 
 
     public void onClick(View v) {
