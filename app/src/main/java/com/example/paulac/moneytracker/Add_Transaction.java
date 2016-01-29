@@ -35,22 +35,24 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__transaction);
 
-        Intent i= getIntent();
-        Bundle b = i.getExtras();
-            String j =(String) b.get("text");
-            category.setText(j);
-
-
 
         category = (EditText) findViewById(R.id.categorytext);
+        Intent i = getIntent();
+        Bundle bd = i.getExtras();
+        if(bd != null)
+        {
+            String getName = (String) bd.get("one");
+            category.setText(getName);
+        }
+
+
+
         amount = (EditText) findViewById(R.id.amounttext);
         note = (EditText) findViewById(R.id.notetext);
         date = (EditText) findViewById(R.id.datetext);
         event = (EditText) findViewById(R.id.eventtext);
         locationText = (EditText) findViewById(R.id.locationtext);
         final ImageView location = (ImageView) findViewById(R.id.imageView5);
-
-
 
         save = (Button) findViewById(R.id.save);
 
@@ -77,7 +79,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
                 userDbHelper.close();
             }}
         });
-
     }
 
 

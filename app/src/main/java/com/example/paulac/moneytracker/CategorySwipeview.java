@@ -19,6 +19,7 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
 
     private String title;
     private int page;
+    String[] a = {"Food and Beverage"};
 
 
     @Override
@@ -62,14 +63,10 @@ public class CategorySwipeview extends ListFragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0){
-            Intent intent = new Intent(view.getContext(), Add_Transaction.class);
-            intent.putExtra("one","Food and Beverage");
-            view.getContext().startActivity(intent);
-        }
-
+        Intent i = new Intent(getActivity(),Add_Transaction.class);
+        i.putExtra("one", "Food and Beverage");
+        this.startActivity(i);
         Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT)
                 .show();
-
     }
 }
