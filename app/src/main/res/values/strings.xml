@@ -4,7 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="imgdesc">imgdesc</string>
 
-    <string-array name="Categories">
+    <string-array name="Expenses">
         <item>Food and Beverage</item>
         <item>Bills and Utilities</item>
         <item>Transportation</item>
@@ -20,6 +20,20 @@
         <item>Insurances</item>
         <item>Fees and Charges</item>
         <item>Other Expense</item>
+    </string-array>
+
+    <string-array name="Incomes">
+        <item>Awards</item>
+        <item>Interest</item>
+        <item>Salary</item>
+        <item>Gifts</item>
+        <item>Selling</item>
+        <item>Other Income</item>
+    </string-array>
+
+    <string-array name="DebtAndLoans">
+        <item>Loan</item>
+        <item>Debt</item>
     </string-array>
 
 </resources>

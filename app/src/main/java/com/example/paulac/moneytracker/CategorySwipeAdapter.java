@@ -21,6 +21,8 @@ public class CategorySwipeAdapter extends FragmentStatePagerAdapter {
                 return CategorySwipeview.newInstance(0, "Page # 1");
             case 1:
                 return CategorySwipeview.newInstance(1, "Page # 2");
+            case 2:
+                return CategorySwipeview.newInstance(2, "Page # 3");
             default:
                 return null;
         }
@@ -35,7 +37,7 @@ public class CategorySwipeAdapter extends FragmentStatePagerAdapter {
         return fragment;
     }*/
 
-    public static int count=2;
+    public static int count=3;
 
     @Override
     public int getCount() {
@@ -48,7 +50,9 @@ public class CategorySwipeAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return "Expenses";
             case 1:
-                return "Income";
+                return "Incomes";
+            case 2:
+                return "Debts and Loans";
             default:
                 return null;
         }
