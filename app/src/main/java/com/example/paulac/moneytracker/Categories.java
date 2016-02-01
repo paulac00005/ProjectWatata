@@ -19,16 +19,6 @@ public class Categories extends ActionBarActivity {
         ViewPager vp = (ViewPager)findViewById(R.id.viewpager);
         CategorySwipeAdapter swipeAdapter = new CategorySwipeAdapter(getSupportFragmentManager());
         vp.setAdapter(swipeAdapter);
-
-
-        /*CategorySwipeview categorySwipeview = (CategorySwipeview)getSupportFragmentManager().findFragmentByTag("categorySwipeview");
-        if (categorySwipeview == null){
-            categorySwipeview = new CategorySwipeview();
-            FragmentTransaction transaction = getSupportFragmentManager(). beginTransaction();
-            transaction.add(android.R.id.content,categorySwipeview,"categorySwipeview");
-            transaction.commit();
-        }*/
-
     }
 
 }

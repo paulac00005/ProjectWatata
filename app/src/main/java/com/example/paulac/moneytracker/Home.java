@@ -101,6 +101,42 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
         else if(month == 11 && year == 2017){
             vp.setCurrentItem(23);
         }
+        else if(month == 0 && year == 2018) {
+            vp.setCurrentItem(24);
+        }
+        else if(month == 1 && year == 2018) {
+            vp.setCurrentItem(25);
+        }
+        else if(month == 2 && year == 2018) {
+            vp.setCurrentItem(26);
+        }
+        else if(month == 3 && year == 2018) {
+            vp.setCurrentItem(27);
+        }
+        else if(month == 4 && year == 2018) {
+            vp.setCurrentItem(28);
+        }
+        else if(month == 5 && year == 2018) {
+            vp.setCurrentItem(29);
+        }
+        else if(month == 6 && year == 2018) {
+            vp.setCurrentItem(30);
+        }
+        else if(month == 7 && year == 2018) {
+            vp.setCurrentItem(31);
+        }
+        else if(month == 8 && year == 2018) {
+            vp.setCurrentItem(32);
+        }
+        else if(month == 9 && year == 2018) {
+            vp.setCurrentItem(33);
+        }
+        else if(month == 10 && year == 2018) {
+            vp.setCurrentItem(34);
+        }
+        else if(month == 11 && year == 2018) {
+            vp.setCurrentItem(35);
+        }
     }
 
     @Override

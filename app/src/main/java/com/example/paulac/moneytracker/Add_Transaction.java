@@ -9,6 +9,8 @@ import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -20,7 +22,9 @@ import android.widget.Toast;
 
 import com.example.paulac.moneytracker.Database.UserDbHelper;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class Add_Transaction extends ActionBarActivity implements View.OnClickListener {
 
@@ -48,6 +52,45 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
 
 
         amount = (EditText) findViewById(R.id.amounttext);
+        amount.addTextChangedListener(new TextWatcher() {
+            private String current = "";
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().equals(current)) {
+                    amount.removeTextChangedListener(this);
+                    String replaceable = String.format("[%s,.]", NumberFormat.getCurrencyInstance().getCurrency().getSymbol());
+                    String cleanString = s.toString().replaceAll(replaceable, "");
+
+                    double parsed;
+                    try {
+                        parsed = Double.parseDouble(cleanString);
+                    } catch (NumberFormatException e) {
+                        parsed = 0.00;
+                    }
+                    String formatted = NumberFormat.getCurrencyInstance().format((parsed / 100));
+
+                    current = formatted;
+                    amount.setText(formatted);
+                    amount.setSelection(formatted.length());
+                    amount.addTextChangedListener(this);
+                }
+            }
+        });
+
+
         note = (EditText) findViewById(R.id.notetext);
         date = (EditText) findViewById(R.id.datetext);
         event = (EditText) findViewById(R.id.eventtext);
@@ -59,13 +102,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (category== null) {
-                    Toast.makeText(getBaseContext(), "Please provide category for this transaction", Toast.LENGTH_LONG).show();
-                }else if(amount==null){
-                    Toast.makeText(getBaseContext(), "Please provide the amount for this transaction", Toast.LENGTH_LONG).show();
-                }else if(category==null && amount==null){
-                    Toast.makeText(getBaseContext(), "Please provide category and amount for this transaction", Toast.LENGTH_SHORT).show();
-                }else{
                 String Category = category.getText().toString();
                 String Amount = amount.getText().toString();
                 String Note = note.getText().toString();
@@ -77,9 +113,10 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
                 userDbHelper.addTransaction(Category, Amount, Note, Date, Event, Location, sqLiteDatabase);
                 Toast.makeText(getBaseContext(), "Data Saved", Toast.LENGTH_LONG).show();
                 userDbHelper.close();
-            }}
+            }
         });
     }
+
 
 
 
