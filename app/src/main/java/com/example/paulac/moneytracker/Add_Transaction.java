@@ -69,6 +69,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
 
             @Override
             public void afterTextChanged(Editable s) {
+
                 if (!s.toString().equals(current)) {
                     amount.removeTextChangedListener(this);
                     String replaceable = String.format("[%s,.]", NumberFormat.getCurrencyInstance().getCurrency().getSymbol());
