@@ -3,6 +3,7 @@ package com.example.paulac.moneytracker;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.TextView;
@@ -197,6 +198,8 @@ public class HomeSwipeAdapter extends FragmentStatePagerAdapter {
             default:
                return null;
         }
+
+
     }
 }
 
