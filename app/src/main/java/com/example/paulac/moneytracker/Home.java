@@ -35,13 +35,17 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
 
         if(month == 0 && year == 2016){
             vp.setCurrentItem(0);
-        }else if(month == 1 && year == 2016) {
+        }
+        else if(month == 1 && year == 2016) {
             vp.setCurrentItem(1);
-        }else if(month == 2 && year == 2016){
+        }
+        else if(month == 2 && year == 2016){
             vp.setCurrentItem(2);
-        }else if(month == 3 && year == 2016){
+        }
+        else if(month == 3 && year == 2016){
             vp.setCurrentItem(3);
-        }else if(month == 4 && year == 2016){
+        }
+        else if(month == 4 && year == 2016){
             vp.setCurrentItem(4);
         }
         else if(month == 5 && year == 2016){
