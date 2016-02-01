@@ -2,6 +2,7 @@ package com.example.paulac.moneytracker.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -44,6 +45,15 @@ public class UserDbHelper extends SQLiteOpenHelper {
         udh.insert(MyDatabase.Database.TABLE_NAME, null, cv);
         Log.e("DATABASE OPERATIONS", "One row inserted . . .");
     }
+
+    public Cursor addInfo(SQLiteDatabase db) {
+
+        Cursor cur;
+        String[] data = {MyDatabase.Database.CATEGORY, MyDatabase.Database.AMOUNT, MyDatabase.Database.NOTE,
+                MyDatabase.Database.DATE, MyDatabase.Database.EVENT, MyDatabase.Database.LOCATION};
+        cur = db.query(MyDatabase.Database.TABLE_NAME, data, null, null, null, null, null);
+        return cur;
+        }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
