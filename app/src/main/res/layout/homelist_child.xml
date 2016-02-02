@@ -18,7 +18,9 @@
             android:text="New Text"
             android:id="@+id/textView5"
             android:textSize="18dp"
-            android:padding="15dp" />
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp" />
 
         <TextView
             android:textColor="#FD971F"
@@ -27,7 +29,9 @@
             android:text="New Text"
             android:id="@+id/textView6"
             android:textSize="18dp"
-            android:padding="15dp" />
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp" />
 
     </LinearLayout>
 <LinearLayout
@@ -36,6 +40,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:layout_marginRight="10dp"
         android:background="#FD971F"
         android:layout_width="100dp"
         android:layout_height="102dp"
