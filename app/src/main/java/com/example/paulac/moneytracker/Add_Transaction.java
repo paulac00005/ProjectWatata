@@ -123,14 +123,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
 
     public void onClick(View v) {
         Intent i = new Intent(this, Categories.class);
-        Bundle extras = new Bundle();
-        extras.putString("category",category.getText().toString());
-        extras.putString("amount",amount.getText().toString());
-        extras.putString("note",note.getText().toString());
-        extras.putString("event",date.getText().toString());
-        extras.putString("event",event.getText().toString());
-        extras.putString("location",locationText.getText().toString());
-        i.putExtras(extras);
         startActivity(i);
     }
 
