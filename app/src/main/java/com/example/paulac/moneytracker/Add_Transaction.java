@@ -8,9 +8,11 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -41,7 +43,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__transaction);
 
-        category = (EditText) findViewById(R.id.categorytext);
+        final EditText category = (EditText) findViewById(R.id.categorytext);
         Intent i = getIntent();
         Bundle bd = i.getExtras();
         if(bd != null)
@@ -91,7 +93,6 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
             }
         });
 
-
         note = (EditText) findViewById(R.id.notetext);
         date = (EditText) findViewById(R.id.datetext);
         event = (EditText) findViewById(R.id.eventtext);
@@ -116,13 +117,20 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
                 userDbHelper.close();
             }
         });
+
+
     }
-
-
-
 
     public void onClick(View v) {
         Intent i = new Intent(this, Categories.class);
+        Bundle extras = new Bundle();
+        extras.putString("category",category.getText().toString());
+        extras.putString("amount",amount.getText().toString());
+        extras.putString("note",note.getText().toString());
+        extras.putString("event",date.getText().toString());
+        extras.putString("event",event.getText().toString());
+        extras.putString("location",locationText.getText().toString());
+        i.putExtras(extras);
         startActivity(i);
     }
 

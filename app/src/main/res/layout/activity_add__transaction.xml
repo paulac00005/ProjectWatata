@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/scrollView"
+    android:saveEnabled="true"
     tools:context="com.example.paulac.watata.Add_Transaction"
     android:paddingLeft="15dp"
     android:paddingTop="15dp"
@@ -64,6 +65,7 @@
                 android:layout_gravity="center" />
 
             <EditText
+                android:saveEnabled="true"
                 android:layout_width="227dp"
                 android:background="@android:color/white"
                 android:layout_height="wrap_content"
