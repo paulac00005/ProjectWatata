@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.paulac.moneytracker.Database.DataProvider;
+import com.example.paulac.moneytracker.Database.ListDataAdapter;
 import com.example.paulac.moneytracker.Database.UserDbHelper;
 
 public class HomeSwipeview extends Fragment {
@@ -22,6 +24,7 @@ public class HomeSwipeview extends Fragment {
     SQLiteDatabase sqLiteDatabase;
     UserDbHelper userDbHelper;
     Cursor cur;
+    ListDataAdapter listDataAdapter;
 
 
     @Override
@@ -49,13 +52,24 @@ public class HomeSwipeview extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_home_swipview, container, false);
         ListView lv = (ListView)view.findViewById(R.id.listView);
+        listDataAdapter = new ListDataAdapter(getContext(), R.layout.homelist);
+        lv.setAdapter(listDataAdapter);
         userDbHelper = new UserDbHelper(getContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
         cur = userDbHelper.getInfo(sqLiteDatabase);
 
         if(cur.moveToFirst()){
             do{
+                String category, amount, note, date, event, location;
 
+                category = cur.getString(0);
+                amount = cur.getString(1);
+                note = cur.getString(2);
+                date = cur.getString(3);
+                event = cur.getString(4);
+                location = cur.getString(5);
+                DataProvider dataProvider = new DataProvider(category, amount, note, date, event, location);
+                listDataAdapter.add(dataProvider);
             }while (cur.moveToNext());
         }
 
