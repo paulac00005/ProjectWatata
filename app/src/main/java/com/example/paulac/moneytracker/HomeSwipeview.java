@@ -51,6 +51,14 @@ public class HomeSwipeview extends Fragment {
         ListView lv = (ListView)view.findViewById(R.id.listView);
         userDbHelper = new UserDbHelper(getContext());
         sqLiteDatabase = userDbHelper.getReadableDatabase();
+        cur = userDbHelper.getInfo(sqLiteDatabase);
+
+        if(cur.moveToFirst()){
+            do{
+
+            }while (cur.moveToNext());
+        }
+
         TextView tvLabel = (TextView) view.findViewById(R.id.HomeSwipetextView);
         tvLabel.setText(page + " -- " + title);
         return view;

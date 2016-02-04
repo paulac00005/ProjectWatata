@@ -46,7 +46,7 @@ public class UserDbHelper extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "One row inserted . . .");
     }
 
-    public Cursor addInfo(SQLiteDatabase db) {
+    public Cursor getInfo(SQLiteDatabase db) {
 
         Cursor cur;
         String[] data = {MyDatabase.Database.CATEGORY, MyDatabase.Database.AMOUNT, MyDatabase.Database.NOTE,
