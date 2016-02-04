@@ -20,7 +20,7 @@
             android:text="Shopping"
             android:textColor="#66D9EF"
             android:id="@+id/categoryView"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
             android:text="Nike Shoes"
             android:textColor="#FD971F"
             android:id="@+id/noteView"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:text="02/04/2016"
             android:textColor="#FD971F"
             android:id="@+id/dateView"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:text="N/A"
             android:textColor="#FD971F"
             android:id="@+id/eventView"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             android:text="Angeles City"
             android:textColor="#FD971F"
             android:id="@+id/locationView"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -63,8 +63,8 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/imagehere" />
 
@@ -74,8 +74,8 @@
             android:text="5000"
             android:textColor="#A6E22E"
             android:id="@+id/amountView"
-            android:textSize="25dp"
-            android:layout_marginLeft="19dp" />
+            android:textSize="15dp"
+            android:layout_marginLeft="21dp" />
 
     </LinearLayout>
 
