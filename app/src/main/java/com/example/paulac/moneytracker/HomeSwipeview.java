@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,11 @@ import com.example.paulac.moneytracker.Database.DataProvider;
 import com.example.paulac.moneytracker.Database.ListDataAdapter;
 import com.example.paulac.moneytracker.Database.UserDbHelper;
 
+import java.util.Calendar;
+
 public class HomeSwipeview extends Fragment {
 
-    private String title;
-    private int page;
+    HomeSwipeAdapter homeSwipeAdapter;
     SQLiteDatabase sqLiteDatabase;
     UserDbHelper userDbHelper;
     Cursor cur;
@@ -30,9 +32,8 @@ public class HomeSwipeview extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        page = getArguments().getInt("someInt", 0);
-        title = getArguments().getString("someTitle");
-
+        int page = getArguments().getInt("someInt", 0);
+        String title = getArguments().getString("someTitle");
     }
 
 
@@ -72,9 +73,6 @@ public class HomeSwipeview extends Fragment {
                 listDataAdapter.add(dataProvider);
             }while (cur.moveToNext());
         }
-
-        TextView tvLabel = (TextView) view.findViewById(R.id.HomeSwipetextView);
-        tvLabel.setText(page + " -- " + title);
         return view;
     }
 }

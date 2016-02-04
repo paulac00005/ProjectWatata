@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="370dp"
     android:layout_height="wrap_content"
     android:background="#2C2C2A">
 
@@ -66,7 +66,8 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/imagehere" />
+            android:background="@drawable/imagehere"
+            android:layout_marginRight="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,7 +76,7 @@
             android:textColor="#A6E22E"
             android:id="@+id/amountView"
             android:textSize="15dp"
-            android:layout_marginLeft="21dp" />
+            android:layout_marginLeft="19dp" />
 
     </LinearLayout>
 

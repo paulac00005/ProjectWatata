@@ -33,6 +33,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
     Context con = this;
     UserDbHelper userDbHelper;
     SQLiteDatabase sqLiteDatabase;
+    String natAv = "N/A";
 
     EditText category, amount, note, date, event, locationText;
     Button save;

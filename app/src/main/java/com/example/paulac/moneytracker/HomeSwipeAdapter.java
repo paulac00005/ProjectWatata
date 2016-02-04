@@ -201,5 +201,6 @@ public class HomeSwipeAdapter extends FragmentStatePagerAdapter {
 
 
     }
+
 }
 

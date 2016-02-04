@@ -14,7 +14,7 @@ import android.widget.Button;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Home extends ActionBarActivity implements View.OnClickListener {
+public class Home extends AppCompatActivity implements View.OnClickListener {
 
     HomeSwipeAdapter homeSwipeAdapter;
 
@@ -24,7 +24,7 @@ public class Home extends ActionBarActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ViewPager vp = (ViewPager) findViewById(R.id.HomeViewPager);
-        Button add = (Button) findViewById(R.id.Add);
+        //Button add = (Button) findViewById(R.id.Add);
         HomeSwipeAdapter swipeAdapter = new HomeSwipeAdapter(getSupportFragmentManager());
         vp.setAdapter(swipeAdapter);
 
