@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Shopping"
             android:textColor="#66D9EF"
-            android:id="@+id/textView"
+            android:id="@+id/categoryView"
             android:textSize="25dp" />
 
         <TextView
@@ -27,24 +27,55 @@
             android:layout_height="wrap_content"
             android:text="Nike Shoes"
             android:textColor="#FD971F"
-            android:id="@+id/textView2"
+            android:id="@+id/noteView"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02/04/2016"
+            android:textColor="#FD971F"
+            android:id="@+id/dateView"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textColor="#FD971F"
+            android:id="@+id/eventView"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angeles City"
+            android:textColor="#FD971F"
+            android:id="@+id/locationView"
             android:textSize="18dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_marginRight="10dp"
-        android:layout_marginTop="25dp"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/imagehere" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5000"
             android:textColor="#A6E22E"
-            android:id="@+id/textView3"
-            android:textSize="18dp" />
+            android:id="@+id/amountView"
+            android:textSize="25dp"
+            android:layout_marginLeft="19dp" />
 
     </LinearLayout>
 
