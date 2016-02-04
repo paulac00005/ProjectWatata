@@ -1,16 +1,31 @@
 package com.example.paulac.moneytracker.ListviewAdapters;
 
 import android.app.ExpandableListActivity;
+import android.content.Context;
 import android.database.DataSetObserver;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.paulac.moneytracker.R;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 /**
  * Created by paulac on 1/27/16.
  */
 public class HomeListviewAdapter extends BaseExpandableListAdapter {
+
+    private Context context;
+    private ArrayList<String> team;
+    private LayoutInflater inflater;
+
     @Override
     public void registerDataSetObserver(DataSetObserver observer) {
 
@@ -63,7 +78,19 @@ public class HomeListviewAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        return null;
+        if(convertView==null){
+            convertView=inflater.inflate(R.layout.homelist_child, null);
+        }
+        //GETTER
+        String child = (String)getChild(groupPosition, childPosition);
+
+        //SETTER
+        TextView date = (TextView) convertView.findViewById(R.id.childTextview1);
+        TextView event = (TextView) convertView.findViewById(R.id.childTextview2);
+        TextView location = (TextView) convertView.findViewById(R.id.childTextview3);
+        ImageView iv = (ImageView)convertView.findViewById(R.id.childImageView);
+
+        return convertView;
     }
 
     @Override

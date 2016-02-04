@@ -1,6 +1,7 @@
 package com.example.paulac.moneytracker;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,7 @@ public class HomeSwipeview extends Fragment {
     private int page;
     SQLiteDatabase sqLiteDatabase;
     UserDbHelper userDbHelper;
+    Cursor cur;
 
 
     @Override
@@ -47,7 +49,8 @@ public class HomeSwipeview extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_home_swipview, container, false);
         ListView lv = (ListView)view.findViewById(R.id.listView);
-
+        userDbHelper = new UserDbHelper(getContext());
+        sqLiteDatabase = userDbHelper.getReadableDatabase();
         TextView tvLabel = (TextView) view.findViewById(R.id.HomeSwipetextView);
         tvLabel.setText(page + " -- " + title);
         return view;
