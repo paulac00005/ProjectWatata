@@ -22,7 +22,6 @@ import java.util.Calendar;
 
 public class HomeSwipeview extends Fragment {
 
-    HomeSwipeAdapter homeSwipeAdapter;
     SQLiteDatabase sqLiteDatabase;
     UserDbHelper userDbHelper;
     Cursor cur;
@@ -37,7 +36,6 @@ public class HomeSwipeview extends Fragment {
     }
 
 
-
     public static HomeSwipeview newInstance(int page, String title) {
         HomeSwipeview fragmentFirst = new HomeSwipeview();
         Bundle args = new Bundle();
@@ -46,6 +44,7 @@ public class HomeSwipeview extends Fragment {
         fragmentFirst.setArguments(args);
         return fragmentFirst;
     }
+
 
 
     @Override
@@ -75,4 +74,5 @@ public class HomeSwipeview extends Fragment {
         }
         return view;
     }
+
 }

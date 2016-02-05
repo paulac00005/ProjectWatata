@@ -16,7 +16,6 @@ import java.util.Date;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
-    HomeSwipeAdapter homeSwipeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
