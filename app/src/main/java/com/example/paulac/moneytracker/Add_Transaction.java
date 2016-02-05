@@ -45,6 +45,7 @@ public class Add_Transaction extends ActionBarActivity implements View.OnClickLi
     UserDbHelper userDbHelper;
     SQLiteDatabase sqLiteDatabase;
     private static final int CAMERA_IMAGE_REQUEST=1;
+    final String path = android.os.Environment.DIRECTORY_DCIM;
 
 
     EditText amount, note, date, event, locationText;
